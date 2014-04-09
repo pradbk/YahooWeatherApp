@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/images"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" >
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:text="Search"
+            android:textColor="#000000" />
+
+        <RadioGroup
+            android:id="@+id/searchTypeRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/button"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@+id/search_button"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/farRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:checked="true"
+                android:text="°F"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/celRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="°C"
+                android:textColor="#FFFFFF" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/searchText"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/searchTypeRadioGroup"
+            android:background="@drawable/app_style"
+            
+            android:gravity="center_horizontal|center_vertical"
+            android:hint="Zip or Location"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="18dip" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
+
+    
+     <TextView
+         		android:visibility="gone"
+                android:id="@+id/errorMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dip"
+                android:text="City Name"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+     
+     
+     
+    <ScrollView
+        android:id="@+id/main_ui_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/resultTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/cityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dip"
+                android:text="City Name"
+                android:shadowRadius="10"
+                android:shadowColor="#7F000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/region_and_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Region and Country"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:shadowRadius="10"
+                android:shadowColor="#7F000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:textColor="#FFFFFF" />
+
+            <ImageView
+                android:layout_marginTop="10dip"
+                android:id="@+id/feed_image"
+                android:layout_width="70dip"
+                android:layout_height="70dip"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/feed_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView"
+                android:layout_below="@+id/imageView"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Medium Text2"
+                android:shadowRadius="10"
+                android:shadowColor="#7F000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/temperatureText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/textView3"
+                android:layout_below="@+id/temp"
+                android:layout_gravity="center_horizontal"
+                android:text="Medium Text3"
+                android:shadowRadius="10"
+                android:shadowColor="#7F000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_marginTop="5dip"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forecast"
+                android:shadowRadius="10"
+                android:shadowColor="#7F000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:textSize="18dip"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF" />
+
+            <TableLayout
+                android:id="@+id/forecast_table"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_alignParentLeft="true" >
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/current_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:shadowRadius="10"
+                android:shadowColor="#7F000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:text="Share Current Weather"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/weather_forecast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:shadowRadius="10"
+                android:shadowColor="#7F000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:text="Share Weather Forecast"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
